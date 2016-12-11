@@ -1,0 +1,68 @@
+<ui:composition template="WEB-INF/template/template.xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"	
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+	<ui:define name="conteudo">
+		<div class="container-fluid">
+	      	<div class="row">
+	      		<div class="col-md-6">
+	      			<div class="container">
+						<h:form id="form-login">
+							<legend>J&#193; SOU CADASTRADO</legend>
+					    	<div class="form-group row">
+					      		<label for="email" class="col-sm-2 col-form-label">Email</label>
+					      		<div class="col-sm-10">
+					      			<input type="email" class="form-control" id="email" name="email" pt:autofocus="true" required="true" placeholder="Email" />
+					      		</div>
+							</div>
+							
+							<div class="form-group row">				      		
+							 	<label for="senha" class="col-sm-2 col-form-label">Senha</label>
+							    <div class="col-sm-10">
+							    	<input type="password" maxlength="8" class="form-control" id="senha" name="senha" required="true" placeholder="Senha" />
+							    </div>		    	
+							</div>
+							
+							<div class="form-group row">
+	      						<div class="offset-sm-2 col-sm-10">
+	        						<h:commandButton action="#{usuarioBean.entrar()}" styleClass="btn btn-primary" style="float: right;" value="ENTRAR" type="submit" />
+	      						</div>
+	    					</div>
+						</h:form>
+					</div>
+	      		</div>
+	  			
+	  			<div class="col-md-6">
+	  				<div class="container">
+						<h:form id="form-cadastro">
+							<legend>SOU UM NOVO CLIENTE</legend>
+					    	
+					    	<div class="form-group row">
+					      		<label for="nome" class="col-sm-2 col-form-label">*Usu&#225;rio</label>
+					      		<div class="col-sm-10">
+					      			<input type="text" maxlength="20" class="form-control" required="true" id="usuario" name="usuario" placeholder="Usu&#225;rio" />
+					      		</div>
+							</div>
+							
+							<div class="form-group row">
+					      		<label for="email" class="col-sm-2 col-form-label">*Email</label>
+					      		<div class="col-sm-10">
+					      			<input type="email" class="form-control" required="true" id="email" name="email" placeholder="Email" />
+					      		</div>
+							</div>
+	
+							<div class="form-group row">
+	      						<div class="offset-sm-2 col-sm-10">
+	      							<h:commandButton action="#{clienteBean.queroMeCadastrar()}" styleClass="btn btn-success" style="float: right;" value="QUERO ME CADASTRAR" />
+	      						</div>
+	    					</div>	
+						</h:form>
+					</div>
+	  			</div>
+	      	</div>
+	    </div>
+	    
+    </ui:define>	
+</ui:composition>
