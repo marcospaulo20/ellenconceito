@@ -94,11 +94,6 @@ $( document ).ready( function () {
 	        },
 	        numero: "required",
 	        rua: "required",
-	        complemento: {
-	        	required: true,
-	        	minlength: 5,
-	        	maxlength: 60
-	        },	        
 	        cidade: "required",
 	        bairro: "required",
 	        telefone: {
@@ -135,11 +130,6 @@ $( document ).ready( function () {
 	    	},
 	    	numero: "Por favor insira o numero",
 	    	rua: "Por favor selecione uma rua",
-	    	complemento: {
-	    		required: "Por favor insira o seu complemento",
-	    		minlength: "Por favor, insira pelo menos 5 caracteres",
-	    		maxlength: "Por favor, indique não mais do que 60 caracteres."
-	    	},
 	    	cidade: "Por favor insira o nome da sua cidade",
 	    	bairro: "Por favor insira o bairro",
 	    	telefone: {

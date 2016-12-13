@@ -15,7 +15,6 @@ import br.com.ellenconceito.persistencia.UsuarioDAOImpl;
 public class UsuarioBean {
 
 	private Usuario usuarioLogado;
-
 	private UsuarioDAO usuarioDAO = UsuarioDAOImpl.getInstance();
 
 	public Usuario getUsuarioLogado() {

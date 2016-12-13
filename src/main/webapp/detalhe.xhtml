@@ -1,0 +1,58 @@
+<ui:composition template="WEB-INF/template/template.xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"	
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+	<ui:define name="conteudo">
+		<div class="container-fluid">
+			<div class="row">
+				<ol class="breadcrumb">
+			  		<li class="breadcrumb-item"><a href="index.xhtml">Home</a></li>
+			  		<li class="breadcrumb-item"><a href="blusas.xhtml">Blusas</a></li>
+			  		<li class="breadcrumb-item active"><h:outputText value="#{produtoBean.produto.nome}" /></li>
+				</ol>
+			</div>	
+	
+	      	<div class="row" style="margin-bottom: 2rem;">
+	      		<div class="col-md-7">
+	      			<img class="rounded float-xs-left" src="#{produtoBean.produto.foto}" id="zoom_01" 
+	      				data-zoom-image="#{produtoBean.produto.foto}" alt="Blusa" style="height: 400px;" />
+	      		</div>	
+	      		<div class="col-md-5">
+			    	<legend><h:outputText value="#{produtoBean.produto.nome}" /></legend>
+			    	<div>
+				    	<del>R$ 90</del>
+				    	
+				    	<h4>R$ <h:outputText value="#{produtoBean.produto.valor}" /></h4>
+			    	</div>
+	
+			    	<div>
+			    		<h5>Tamanho</h5>
+			    		<a href="#" class="btn btn-secondary disabled" role="button" aria-disabled="true">P</a>
+			    		<a href="#" class="btn btn-secondary disabled" role="button" aria-disabled="true">M</a>
+			    		<a href="#" class="btn btn-secondary disabled" role="button" aria-disabled="true">G</a>
+			    		<a href="#" class="btn btn-secondary disabled" role="button" aria-disabled="true">GG<sup>x</sup></a>
+			    	</div>
+	
+			    	<div id="cor">
+			    		<h5>Cor</h5>
+			    		<a href="#" class="btn btn-secondary cor disabled" role="button" aria-disabled="true" style=""></a>		    		
+			    	</div>
+	
+			    	<div id="descricao">
+			    		<h5>Descri&#231;&#227;o</h5>
+			    		<ul>
+			    			<ui:repeat var="descricao" value="#{produtoBean.produto.descricao}">
+					    		<li><h:outputText value="#{descricao}" /></li>					    		
+				    		</ui:repeat>
+			    		</ul>
+			    	</div>
+	
+			    	<a href="login-cadastro.xhtml" class="btn btn-primary btn-lg btn-block" role="button">COMPRAR</a>
+			    	<a href="login-cadastro.xhtml" class="btn btn-secondary btn-lg btn-block" role="button">ADICIONAR AO CARRINHO</a>
+				</div>	
+	      	</div>
+	    </div>
+	</ui:define>
+</ui:composition>

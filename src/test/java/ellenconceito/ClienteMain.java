@@ -1,38 +1,24 @@
-package br.com.ellenconceito.persistencia;
+package ellenconceito;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 import br.com.ellenconceito.negocio.usuario.ClienteRegistrado;
 import br.com.ellenconceito.negocio.usuario.ClienteRegistrado.ClienteRegistradoBuilder;
-import br.com.ellenconceito.negocio.usuario.Usuario;
 
-public class UsuarioDAOImpl implements UsuarioDAO {
+public class ClienteMain {
 
-	private static UsuarioDAOImpl instance = new UsuarioDAOImpl();
-	private static Map<Long, Usuario> usuarios = new HashMap<Long, Usuario>();
-
-	public static UsuarioDAOImpl getInstance() {
-		return instance;
-	}
-
-	public void popularUsuarios() {
-		for(Usuario u : getFile("file/clientes.txt")) {
-			usuarios.put(u.getId(), u);
+	public static void main(String[] args) {
+		ClienteMain obj = new ClienteMain();
+		List<ClienteRegistrado> clienteRegistrados = obj.getFile("file/clientes.txt");
+		for (ClienteRegistrado cr : clienteRegistrados) {
+			System.out.println(cr.getId());
+			System.out.println(cr.getEmail());
+			System.out.println(cr.getUsuario());
 		}
-	}
-
-	@Override
-	public Usuario buscarPeloEmailSenha(String email, String senha) {
-		popularUsuarios();
-		Usuario usuario = usuarios.values().stream()
-				.filter(u -> u.getEmail().equals(email) && u.getSenha().equals(senha)).findAny().orElse(new Usuario());
-		return usuario;
 	}
 
 	private List<ClienteRegistrado> getFile(String fileName) {
@@ -67,5 +53,5 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		}
 
 		return listaClienteRegistrados;
-	}
+	}	
 }

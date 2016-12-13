@@ -46,7 +46,7 @@
 				
 				<h:panelGrid columns="2" rendered="#{usuarioBean.usuarioLogado.id != null}">
 					<li class="nav-item">
-						<a class="nav-link" href="login-cadastro.html">
+						<a class="nav-link" href="login-cadastro.xhtml">
 							<i class="fa fa-list"></i> Meus Pedidos
 						</a>
 					</li>
@@ -56,9 +56,9 @@
 							<i class="fa fa-shopping-basket fa-lg"></i> vazia
 						</a>
 					</li>
-				</h:panelGrid>				
+				</h:panelGrid>
 			</ul>
-	
+
 			<span class="icon-power-off">
 				<h:commandButton action="#{usuarioBean.sair}" styleClass="btn btn-primary" value="Sair" rendered="#{usuarioBean.usuarioLogado.id != null}" />				
 			</span>
@@ -96,9 +96,11 @@
 
 	<script type="text/javascript" src="resources/js/jquery.lazyload.js"></script>
 	<script type="text/javascript" src="resources/js/imagem.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.elevatezoom.js"></script>
 	
 	<script type="text/javascript" src="resources/js/jquery.validate.js"></script>
 	<script type="text/javascript" src="resources/js/javascript.js"></script>	
 	<script type="text/javascript" src="resources/js/formulario.js"></script>
+	<script type="text/javascript" src="resources/js/detalhe.js"></script>
 </h:body>
 </html>

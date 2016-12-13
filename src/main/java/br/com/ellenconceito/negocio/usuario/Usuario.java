@@ -9,9 +9,7 @@ public class Usuario implements Serializable {
 	private Long id;
 
 	private String email;
-
 	private String usuario;
-
 	private String senha;
 
 	public Usuario() {

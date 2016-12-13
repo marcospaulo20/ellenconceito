@@ -16,6 +16,19 @@ public class ClienteRegistrado extends Usuario implements Serializable {
 	private String telefone;
 	private Boolean telefoneEntrega = Boolean.FALSE;
 
+	public ClienteRegistrado() {
+
+	}
+
+	private ClienteRegistrado(ClienteRegistradoBuilder builder) {
+		this.nome = builder.nome;
+		this.dataNascimento = builder.dataNascimento;
+		this.cpf = builder.cpf;
+		this.endereco = builder.endereco;
+		this.genero = builder.genero;
+		this.telefone = builder.telefone;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -95,6 +108,49 @@ public class ClienteRegistrado extends Usuario implements Serializable {
 		} else if (!super.getId().equals(other.getId()))
 			return false;
 		return true;
+	}
+
+	public static class ClienteRegistradoBuilder {
+		private String nome;
+		private Date dataNascimento;
+		private String cpf;
+		private Endereco endereco;
+		private Genero genero;
+		private String telefone;
+
+		public ClienteRegistradoBuilder nome(String nome) {
+			this.nome = nome;
+			return this;
+		}
+
+		public ClienteRegistradoBuilder dataNascimento(Date dataNascimento) {
+			this.dataNascimento = dataNascimento;
+			return this;
+		}
+
+		public ClienteRegistradoBuilder cpf(String cpf) {
+			this.cpf = cpf;
+			return this;
+		}
+
+		public ClienteRegistradoBuilder Endereco(Endereco endereco) {
+			this.endereco = endereco;
+			return this;
+		}
+
+		public ClienteRegistradoBuilder Genero(Genero genero) {
+			this.genero = genero;
+			return this;
+		}
+
+		public ClienteRegistradoBuilder telefone(String telefone) {
+			this.telefone = telefone;
+			return this;
+		}
+
+		public ClienteRegistrado build() {
+			return new ClienteRegistrado(this);
+		}
 	}
 
 }
