@@ -49,8 +49,8 @@
 			    		</ul>
 			    	</div>
 	
-			    	<a href="login-cadastro.xhtml" class="btn btn-primary btn-lg btn-block" role="button">COMPRAR</a>
-			    	<a href="login-cadastro.xhtml" class="btn btn-secondary btn-lg btn-block" role="button">ADICIONAR AO CARRINHO</a>
+			    	<a href="#{usuarioBean.usuarioLogado.id == null ? 'login-cadastro.xhtml' : 'manutencao.xhtml'}" class="btn btn-primary btn-lg btn-block" role="button">COMPRAR</a>
+			    	<a href="#{usuarioBean.usuarioLogado.id == null ? 'login-cadastro.xhtml' : 'manutencao.xhtml'}" class="btn btn-secondary btn-lg btn-block" role="button">ADICIONAR AO CARRINHO</a>
 				</div>	
 	      	</div>
 	    </div>

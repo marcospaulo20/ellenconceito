@@ -16,7 +16,7 @@
 	<!-- css de icons-->
 	<link rel="stylesheet" href="resources/lib/font-awesome/css/font-awesome.min.css" />
 	
-	<title>Home</title>	
+	<title>Home | @EllenConceito</title>	
 </h:head>
 <h:body>
 	<nav class="navbar navbar-light navbar-static-top bg-faded">
@@ -32,7 +32,7 @@
 				</li>
 				
 				<li class="nav-item">
-					<a class="nav-link" href="login-cadastro.xhtml">
+					<a class="nav-link" href="#{usuarioBean.usuarioLogado.id == null ? 'login-cadastro.xhtml' : ''}">
 						<h:panelGrid columns="2">						
 							<h:panelGroup rendered="#{usuarioBean.usuarioLogado.id == null}">
 								<i class="fa fa-user"></i> Entre ou cadastre-se
@@ -64,7 +64,7 @@
 			</span>
 		</h:form>		
 		
-		<h:form styleClass="form-inline float-xs-right">
+		<h:form styleClass="form-inline float-xs-right" onkeypress="if (event.keyCode == 13) { return false; }" style="if(verificarURL() == true ? 'display: none;' : ''')">
 			<div class="input-group">
 				<h:inputText styleClass="form-control" value="" pt:placeholder="Pesquisa" />
 				<span class="input-group-btn">

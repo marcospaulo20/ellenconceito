@@ -79,7 +79,7 @@ $( document ).ready( function () {
 		rules: {
 	        cpf: {
 	        	required: true,
-	        	minlength: 12
+	        	minlength: 11
 	        },	        
 	        dataNascimento: "required",
 	        rua: {
@@ -114,8 +114,8 @@ $( document ).ready( function () {
 	    messages: {
 	    	cpf: {
 	    		required: "Por favor insira o CPF",
-				minlength: "Por favor, insira pelo menos 12 caracteres",
-				maxlength: "Por favor, indique não mais do que 12 caracteres."
+				minlength: "Por favor, insira pelo menos 11 caracteres",
+				maxlength: "Por favor, indique não mais do que 11 caracteres."
 	    	},	    	
 	    	dataNascimento: "Por favor insira a sua data de nascimento",
 	    	uf: {
@@ -177,14 +177,12 @@ $( document ).ready( function () {
 			},
 			highlight: function ( element, errorClass, validClass ) {
 				$( element ).parents( ".col-sm-10" ).addClass( "has-danger" ).removeClass( "has-success" );
-				$( element ).parents( ".col-sm-6" ).addClass( "has-danger" ).removeClass( "has-success" );
 				$( element ).parents( ".col-sm-4" ).addClass( "has-danger" ).removeClass( "has-success" );
 				$( element ).parents( ".col-sm-3" ).addClass( "has-danger" ).removeClass( "has-success" );
 				$( element ).parents( ".col-sm-2" ).addClass( "has-danger" ).removeClass( "has-success" );				
 			},
 			unhighlight: function ( element, errorClass, validClass ) {
 				$( element ).parents( ".col-sm-10" ).addClass( "has-success" ).removeClass( "has-danger" );
-				$( element ).parents( ".col-sm-6" ).addClass( "has-danger" ).removeClass( "has-success" );
 				$( element ).parents( ".col-sm-4" ).addClass( "has-success" ).removeClass( "has-danger" );
 				$( element ).parents( ".col-sm-3" ).addClass( "has-success" ).removeClass( "has-danger" );
 				$( element ).parents( ".col-sm-2" ).addClass( "has-success" ).removeClass( "has-danger" );				

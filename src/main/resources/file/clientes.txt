@@ -1,1 +1,0 @@
-1;marcospaulo@gmail.com;marcos.paulo;12345678;marcos paulo lima;10-12-1995;123456789012;Avenida; ;CE;53;60182015;Vicente Pizon;MASCULINO;5585909809;true;

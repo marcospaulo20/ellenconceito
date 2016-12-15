@@ -1,6 +1,8 @@
 package ellenconceito;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +13,18 @@ import br.com.ellenconceito.negocio.usuario.ClienteRegistrado.ClienteRegistradoB
 
 public class ClienteMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		String content = "This is the content to write into file oioi";
+		File file = new File("clientes.txt");
+		FileWriter fw = new FileWriter(file.getAbsoluteFile());
+		BufferedWriter bw = new BufferedWriter(fw);
+		bw.write(content);
+		bw.close();
+		
+		
+	}
+
+	private List<ClienteRegistrado> getFile(String fileName) {
 		ClienteMain obj = new ClienteMain();
 		List<ClienteRegistrado> clienteRegistrados = obj.getFile("file/clientes.txt");
 		for (ClienteRegistrado cr : clienteRegistrados) {
@@ -19,9 +32,7 @@ public class ClienteMain {
 			System.out.println(cr.getEmail());
 			System.out.println(cr.getUsuario());
 		}
-	}
-
-	private List<ClienteRegistrado> getFile(String fileName) {
+		
 		List<ClienteRegistrado> listaClienteRegistrados = new ArrayList<ClienteRegistrado>();
 		ClienteRegistrado novoCliente;
 

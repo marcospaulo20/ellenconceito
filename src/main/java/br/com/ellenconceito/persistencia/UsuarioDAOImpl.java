@@ -22,7 +22,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	}
 
 	public void popularUsuarios() {
-		for(Usuario u : getFile("file/clientes.txt")) {
+		for(Usuario u : getClienteFile()) {
 			usuarios.put(u.getId(), u);
 		}
 	}
@@ -35,13 +35,11 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		return usuario;
 	}
 
-	private List<ClienteRegistrado> getFile(String fileName) {
+	private List<ClienteRegistrado> getClienteFile() {
 		List<ClienteRegistrado> listaClienteRegistrados = new ArrayList<ClienteRegistrado>();
 		ClienteRegistrado novoCliente;
 
-		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource(fileName).getFile());
-
+		File file = new File("C:\\tmp\\clientes.txt");
 		try (Scanner scanner = new Scanner(file)) {
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();

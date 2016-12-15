@@ -4,3 +4,10 @@ $("#zoom_01").elevateZoom({
 	lensFadeIn: 500,
 	lensFadeOut: 500
 });
+
+function verificarURL() {
+	if(window.location.href.indexOf('') == -1)
+		return true;
+	else
+		return false;
+}
